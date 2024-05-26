@@ -40,7 +40,7 @@ Wazuh is installed to provide comprehensive security monitoring and log analysis
 1. **Assisted Installation**:
    - Wazuh components (manager, agent, and API) were installed following the official documentation.
      
-     **REFERENCE:** [Wazuh documentaion]([https://github.com/cowrie/cowrie](https://documentation.wazuh.com/current/quickstart.html))
+     **REFERENCE:** [Wazuh documentation](https://documentation.wazuh.com/current/quickstart.html)
      
    - Download and run the Wazuh installation assistant.
     
