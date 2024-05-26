@@ -1,0 +1,10 @@
+---
+- name: Generate /etc/hosts file
+  hosts: all
+  tasks:
+    - name: Copy /etc/hosts template
+      template:
+        src: ./hosts/hosts.j2
+        dest: /etc/hosts
+      become: true
+

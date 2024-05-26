@@ -1,0 +1,8 @@
+[servers]
+ntp-server
+wazuh-siem
+rsyslog-server
+[prod]
+node-1
+node-2
+[dev]
