@@ -2,7 +2,7 @@
 
 The primary objective of this project was to design and implement a robust security architecture for a simulated enterprise network, capable of detecting, analyzing, and effectively responding to cyber threats. By utilizing advanced technologies such as FortiGate Firewall, Cowrie Honeypot, and Wazuh SIEM, the project aimed to establish a defense-in-depth strategy, thereby minimizing security risks and enhancing the network's resilience against attacks. Special attention was given to the system's ability to automatically redirect suspicious traffic to a honeypot for further analysis, while maintaining operational continuity for legitimate users. By simulating a real attack using Kali Linux, we aimed to evaluate the effectiveness of our architecture under real-world conditions, to better understand the strengths and limitations of our solution.
 
-![Architecture](captures/architecure.jpg)
+  ![Architecture](captures/architecure.jpg)
 
 ### 1. FortiGate Firewall Configuration:
 - **Port 1** is connected to the WAN interface with an IP address of `192.168.19.5`.
@@ -43,10 +43,7 @@ Wazuh is installed to provide comprehensive security monitoring and log analysis
     Download and run the Wazuh installation assistant.
     
     ```bash
-    curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo 
-    ```
-    ```bash
-    bash ./wazuh-install.sh -a
+    curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
     ```
     
     Once the assistant finishes the installation, the output shows the access credentials and a message that confirms that the installation was successful.
@@ -102,10 +99,12 @@ The NTP server ensures all devices in the network have synchronized time, which 
 ### Scenario: Brute Force Attack
 1. **Active information gathering**
    - After conducting active information gathering, we successfully scanned the 10.10.10.0/24 network and identified a vulnerable host, our honeypot (10.10.10.128), with an open SSH port 2222.
+     
      ![Nmap](captures/nmap.jpg)
      
 1. **Attack Execution**:
    - A brute force attack was simulated using Hydra against the SSH service on the honeypot.
+     
      ![Nmap](captures/brute_force.jpg)
      
 3. **Detection**:
@@ -113,13 +112,15 @@ The NTP server ensures all devices in the network have synchronized time, which 
    - Rsyslog forwarded the logs to Wazuh.
    - Wazuh generated alerts based on the predefined rules.
 
-![Cowrie](captures/Cowrie_logs.jpg)
-![Wazuh](captures/SE-Dashboard.jpg)
-![Wazuh](captures/active_response.jpg)
+  ![Cowrie](captures/Cowrie_logs.jpg)
+  ![Wazuh](captures/SE-Dashboard.jpg)
+  ![Wazuh](captures/active_response.jpg)
 
 ### Automation Script
 The automation script developed for this project simplifies the management and configuration of network nodes.
-![Script Header](captures/script_header.jpg)
+
+  ![Script Header](captures/script_header.jpg)
+  
 1. **Key Functionalities**:
    - **Argument Handling**: The script uses command-line arguments to specify actions like adding a new host, setting IP addresses, hostnames, and host types. It validates these inputs and provides a help menu for usage guidance.
    - **Host Verification**: Checks if the specified IP address is reachable and validates it against a standard IP address pattern. Logs informational, error, or success messages based on the outcome of the reachability test.
@@ -138,4 +139,4 @@ The automation script developed for this project simplifies the management and c
    - The script includes robust error checking and handling mechanisms that stop execution upon encountering critical errors, ensuring that any misconfiguration doesn't propagate.
    - It ensures the cleanup of sensitive data by removing the temporary vault password file after its usage.
 
-![Automation Script exectuion](captures/automation.jpg)
+  ![Automation Script exectuion](captures/automation.jpg)
