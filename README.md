@@ -37,10 +37,12 @@ The primary objective of this project was to design and implement a robust secur
 
 ### Wazuh Installation and Configuration
 Wazuh is installed to provide comprehensive security monitoring and log analysis. Here's how it was set up:
-1. **Installation**:
+1. **Assisted Installation**:
    - Wazuh components (manager, agent, and API) were installed following the official documentation.
-   - Assited installion:
-    Download and run the Wazuh installation assistant.
+     
+     **REFERENCE:** [Wazuh documentaion]([https://github.com/cowrie/cowrie](https://documentation.wazuh.com/current/quickstart.html))
+     
+   - Download and run the Wazuh installation assistant.
     
     ```bash
     curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
